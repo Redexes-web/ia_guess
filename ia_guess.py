@@ -1,7 +1,7 @@
 from random import randint
 
 
-# Fonction permetant de trouver la valeur mediane entre deux autres valeur
+# Fonction permetant de trouver la valeur moyenne entre deux autres valeur
 def middle(n1, n2):
     if n1 < n2:
         diff = n2 - n1
@@ -18,7 +18,7 @@ my_range = [0, 100]
 rand = randint(my_range[0], my_range[1])
 #guesses est le tableau des suggestions faite par l'algo
 guesses = [middle(my_range[0], my_range[1])]
-#answer est la reponse courante de l'algo, elle a pour valeur initiale la mediane de la valeur minimal et maximal
+#answer est la reponse courante de l'algo, elle a pour valeur initiale la moyenne de la valeur minimal et maximal
 answer = middle(my_range[0], my_range[1])
 #tries est le nombre d'essais realisé par l'algo pour trouver le nombre aleatoire
 tries = 1
@@ -51,7 +51,7 @@ while answer != rand:
     below_above = ("above", "below")[answer > rand]
     #on trouve le nombre le plus proche de notre reponse dans la liste de nombre deja essayés
     nearest = find_nearest(answer, guesses, my_range,  below_above)
-    #on trouve la valeur mediane entre notre ancienne reponse et la valeur la plus proche de cette derniere pour l'affecter a notre nouvelle reponse
+    #on trouve la valeur moyenne entre notre ancienne reponse et la valeur la plus proche de cette derniere pour l'affecter a notre nouvelle reponse
     answer = middle(nearest, answer)
     #enfin on ajoute cette nouvelle reponse aux suppositions
     guesses.append(answer)
